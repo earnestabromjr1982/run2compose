@@ -62,3 +62,8 @@ jobs:
             teeaye205/run2compose:latest
           cache-from: type=registry,ref=teeaye205/run2compose:latest
           cache-to: type=inline
+
+      - name: Verify image was pushed to Docker Hub
+        run: |
+          docker buildx imagetools inspect teeaye205/run2compose:${GITHUB_SHA}
+          docker buildx imagetools inspect teeaye205/run2compose:latest
