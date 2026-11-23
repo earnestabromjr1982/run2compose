@@ -58,7 +58,7 @@ jobs:
           pull: true
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/run2compose:${{ github.sha }}
-            ${{ secrets.DOCKERHUB_USERNAME }}/run2compose:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/run2compose:latest
+            teeaye205/run2compose:${{ github.sha }}
+            teeaye205/run2compose:latest
+          cache-from: type=registry,ref=teeaye205/run2compose:latest
           cache-to: type=inline
